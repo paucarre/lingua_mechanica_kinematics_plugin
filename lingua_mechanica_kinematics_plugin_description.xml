@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library path="lib/liblingua_mechanica_kinematics_plugin">
+  <class name="lingua_mechanica_kinematics_plugin/LinguaMechanicaKinematicsPlugin" type="lingua_mechanica_kinematics_plugin::LinguaMechanicaKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>Lingua Mechanica Inverse Kinematics inference</description>
+  </class>
+</library>
