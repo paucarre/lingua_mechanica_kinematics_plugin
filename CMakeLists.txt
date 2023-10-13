@@ -10,17 +10,11 @@ find_package(Torch REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(MSG_FILES
-  RobotStates.msg
-)
-
-set(SRV_FILES
-  GetPositoinsIK.srv
-)
-
 find_package(catkin REQUIRED
   COMPONENTS
+    lingua_mechanica_kinematics_msgs
     moveit_core
+    moveit_msgs
     pluginlib
     roscpp
     tf_conversions
@@ -36,7 +30,9 @@ catkin_package(
   INCLUDE_DIRS
     include
   CATKIN_DEPENDS
+    lingua_mechanica_kinematics_msgs
     moveit_core
+    moveit_msgs
     pluginlib
     roscpp
     tf_conversions

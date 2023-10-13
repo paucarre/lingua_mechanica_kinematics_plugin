@@ -7,15 +7,18 @@
   <license>MIT</license>
   <buildtool_depend>catkin</buildtool_depend>
 
+  <depend>lingua_mechanica_kinematics_msgs</depend>
   <build_depend>moveit_core</build_depend>
   <build_depend>pluginlib</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>tf_conversions</build_depend>
+  <build_depend>moveit_msgs</build_depend>
 
   <exec_depend>moveit_core</exec_depend>
   <exec_depend>pluginlib</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>tf_conversions</exec_depend>
+  <exec_depend>moveit_msgs</exec_depend>
 
   <export>
     <moveit_core plugin="${prefix}/lingua_mechanica_kinematics_plugin_description.xml"/>
