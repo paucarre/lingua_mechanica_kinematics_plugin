@@ -196,12 +196,10 @@ public:
                      std::vector<geometry_msgs::Pose> &poses) const;
 
 
-  bool initialize(const moveit::core::RobotModel& robot_description,
-                  const std::string& group_name,
-                  const std::string& base_name,
-                  const std::string& tip_name,
-                  double search_discretization);
-
+  bool initialize(const moveit::core::RobotModel& robot_model, const std::string& group_name,
+                          const std::string& base_frame, const std::vector<std::string>& tip_frames,                          
+                          double search_discretization);
+                          
 private:
   moveit_msgs::KinematicSolverInfo ik_group_info_; /** Stores information for the inverse kinematics solver */
 

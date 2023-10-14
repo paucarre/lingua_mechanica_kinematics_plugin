@@ -21,14 +21,11 @@
 namespace lingua_mechanica_kinematics_plugin
 {
 
-bool LinguaMechanicaKinematicsPlugin::initialize(const moveit::core::RobotModel& robot_model,
-    const std::string& group_name,
-    const std::string& base_frame,
-    const std::string& tip_frame,
-    double search_discretization)
+bool LinguaMechanicaKinematicsPlugin::initialize(const moveit::core::RobotModel& robot_model, const std::string& group_name,
+                          const std::string& base_frame, const std::vector<std::string>& tip_frames,                          
+                          double search_discretization)
 {
   
-  std::vector<std::string> tip_frames = {tip_frame};
   storeValues(robot_model, group_name, base_frame, tip_frames, search_discretization);
 
   ROS_DEBUG_STREAM_NAMED("LinguaMechanicaKinematicsPlugin", "Reading joints and links from URDF");
@@ -42,9 +39,9 @@ bool LinguaMechanicaKinematicsPlugin::initialize(const moveit::core::RobotModel&
     return false;
   }
 
-  if (!tree.getChain(base_frame, tip_frame, chain))
+  if (!tree.getChain(base_frame, tip_frames[0], chain))
   {
-    ROS_FATAL("Couldn't find chain %s to %s", base_frame.c_str(), tip_frame.c_str());
+    ROS_FATAL("Couldn't find chain %s to %s", base_frame.c_str(), tip_frames[0].c_str());
     return false;
   }
 
